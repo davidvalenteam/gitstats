@@ -47,7 +47,7 @@ namespace GitStats
                     return 0;
                 }
 
-                Console.WriteLine("I am doing the job...");
+                Console.WriteLine($"I found a git folder at '{gitFolder}'. I will do the job, please wait...");
 
                 try
                 {

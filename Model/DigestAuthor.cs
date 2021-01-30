@@ -8,10 +8,7 @@ namespace GitStats.Model
         public int PercentageLinesAdded { get; private set; }
         public int PercentageLinesDeleted { get; private set; }
         public int PercentageTotalCommits { get; private set; }
-        public int PonderatedPercentage
-        {
-            get => Convert.ToInt32(Decimal.Divide(PercentageLinesAdded + PercentageLinesDeleted + PercentageTotalCommits, 3) * 100);
-        }
+        public int PonderatedPercentage { get; private set; }
 
         public DigestAuthor(Author author, int percentageLinesAdded, int percentageLinesDeleted, int percentageTotalCommits)
         {
@@ -19,6 +16,7 @@ namespace GitStats.Model
             PercentageLinesAdded = percentageLinesAdded;
             PercentageLinesDeleted = percentageLinesDeleted;
             PercentageTotalCommits = percentageTotalCommits;
+            PonderatedPercentage = Convert.ToInt32(Decimal.Divide(PercentageLinesAdded + PercentageLinesDeleted + PercentageTotalCommits, 3));
         }
     }
 }
