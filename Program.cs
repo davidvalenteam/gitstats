@@ -40,7 +40,7 @@ namespace GitStats
                     return 0;
                 }
 
-                var gitFolder = inputFolderOption.HasValue() ? inputFolderOption.Value() : "";
+                var gitFolder = inputFolderOption.HasValue() ? inputFolderOption.Value() : Directory.GetCurrentDirectory();
 
                 if (!Directory.Exists(Path.Combine(gitFolder, ".git")))
                 {
