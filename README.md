@@ -4,7 +4,7 @@ Git Stats gives a quick overview of a Git repository: the total commits, total l
 
 ## dotnet global tool 
 
-The project is published at [NuGet](https://www.nuget.org/packages/GitStats/) as a global tool. To install and used it:
+The project is published at [NuGet](https://www.nuget.org/packages/GitStats/) as a global tool. To install and used it, used the command line:
 
 > dotnet tool install --global GitStats
 
