@@ -13,29 +13,27 @@ namespace GitStats
 
             using var repo = new Repository(gitFolder);
 
-            var commits = repo.Commits.QueryBy(new CommitFilter()
+            foreach (var branch in repo.Branches.Where(b => b.IsRemote))
             {
-                SortBy = CommitSortStrategies.Reverse
-            });
-
-            foreach (var commit in commits)
-            {
-                if (!authors.ContainsKey(commit.Author.Name))
+                foreach (var commit in branch.Commits.OrderBy(c => c.Author.When))
                 {
-                    authors.Add(commit.Author.Name, new Author(commit.Author.Name, commit.Author.Email));
-                }
-
-                if (commit.Parents.Count() == 1)  //a merge commit is not considered neither the first commit
-                {
-                    var patch = repo.Diff.Compare<Patch>(commit.Parents.First().Tree, commit.Tree);
-
-                    foreach (var ptc in patch)
+                    if (!authors.ContainsKey(commit.Author.Name))
                     {
-                        authors[commit.Author.Name].LinesAdded += ptc.LinesAdded;
-                        authors[commit.Author.Name].LinesDeleted += ptc.LinesDeleted;
+                        authors.Add(commit.Author.Name, new Author(commit.Author.Name, commit.Author.Email));
                     }
 
-                    authors[commit.Author.Name].TotalCommits++;
+                    if (commit.Parents.Count() == 1)  //a merge commit is not considered neither the first commit
+                    {
+                        var patch = repo.Diff.Compare<Patch>(commit.Parents.First().Tree, commit.Tree);
+
+                        foreach (var ptc in patch)
+                        {
+                            authors[commit.Author.Name].LinesAdded += ptc.LinesAdded;
+                            authors[commit.Author.Name].LinesDeleted += ptc.LinesDeleted;
+                        }
+
+                        authors[commit.Author.Name].TotalCommits++;
+                    }
                 }
             }
 
