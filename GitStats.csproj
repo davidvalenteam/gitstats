@@ -6,6 +6,11 @@
 
 	<PackAsTool>true</PackAsTool>
 	<ToolCommandName>gitstats</ToolCommandName>
+	<PackageProjectUrl>https://github.com/davidvalenteam/gitstats</PackageProjectUrl>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
+	<Description>Git Stats gives a quick overview of a Git repository: the total commits, total lines added, total lines removed, lines added by user, lines removed by user, etc.</Description>
+	<Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
