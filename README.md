@@ -2,6 +2,14 @@
 
 Git Stats gives a quick overview of a Git repository: the total commits, total lines added, total lines removed, lines added by user, lines removed by user, etc.
 
+## dotnet global tool 
+
+The project is published at [NuGet](https://www.nuget.org/packages/GitStats/) as a global tool. To install and used it:
+
+> dotnet tool install --global GitStats
+
+> gitstats
+
 ## How to use it
 
 > GitStats.exe -i [Git Repository Folder]
