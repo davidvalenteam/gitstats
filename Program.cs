@@ -9,6 +9,7 @@ namespace GitStats
     {
         private static readonly string _htmlReportFileName = "gitstatsreport.html";
         private static readonly string _jsonReportFileName = "gitstatsreport.json";
+        private static readonly string _toolGitRepositoryUrl = "https://github.com/davidvalenteam/gitstats";
 
         static void Main(string[] args)
         {
@@ -58,7 +59,7 @@ namespace GitStats
                     if (htmlOption.HasValue())
                     {
                         var filePath = Path.Combine(gitFolder, _htmlReportFileName);
-                        File.WriteAllText(filePath, HTMLReport.CreateReport(digest));
+                        File.WriteAllText(filePath, HTMLReport.CreateReport(digest, _toolGitRepositoryUrl));
                         Console.WriteLine($"HTML report created at {filePath}");
                     }
 
@@ -76,7 +77,7 @@ namespace GitStats
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Fatal error, I am terribly sorry... Please visit my GitHub repository and leave your feedback, thanks.");
+                    Console.WriteLine($"Fatal error, I am terribly sorry... Please visit my GitHub repository ({_toolGitRepositoryUrl}) and leave your feedback, thanks.");
                 }
 
                 return 0;

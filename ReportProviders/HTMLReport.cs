@@ -5,7 +5,7 @@ namespace GitStats.ReportProviders
 {
     internal static class HTMLReport
     {
-        public static string CreateReport(Digest digest)
+        public static string CreateReport(Digest digest, string toolGitRepositoryUrl)
         {
             var html = @$"<!DOCTYPE html>
                           <html>
@@ -54,7 +54,10 @@ namespace GitStats.ReportProviders
                           html += @$"</table>
                                 </section>
                                 <section>
-                                    <p>Report date: <i><small>{digest.DigestDateUTC:dd-MM-yy H:mm:ss}</small></i></p>
+                                    <p>
+                                            Report date: <i><small>{digest.DigestDateUTC:dd-MM-yy H:mm:ss}</small></i>
+                                            This project is at <a href='{toolGitRepositoryUrl}'>GitHub</a>.
+                                    </p>
                                 </section >
                              </body>
                         </html>";
