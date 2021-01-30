@@ -33,7 +33,7 @@ namespace GitStats.ReportProviders
                                 <section>
                                     <table>
                                         <tr>
-                                            <th>Nome</th>
+                                            <th>Name</th>
                                             <th>Email</th>
                                             <th>Total Commits</th>
                                             <th>Total Lines Added</th>
@@ -45,9 +45,9 @@ namespace GitStats.ReportProviders
                                   html += @$"<tr>
                                                  <td>{author.Author.Name}</td>
                                                  <td>{author.Author.Email}</td>
+                                                 <td>{author.Author.TotalCommits} (<u>{author.PercentageTotalCommits}%</u>)</td>
                                                  <td>{author.Author.LinesAdded} (<u>{author.PercentageLinesAdded}%</u>)</td>
                                                  <td>{author.Author.LinesDeleted} (<u>{author.PercentageLinesDeleted}%</u>)</td>
-                                                 <td>{author.Author.TotalCommits} (<u>{author.PercentageTotalCommits}%</u>)</td>
                                             </tr>";
                                 }
 
