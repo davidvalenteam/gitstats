@@ -44,7 +44,7 @@ namespace GitStats
 
                 if (!Directory.Exists(Path.Combine(gitFolder, ".git")))
                 {
-                    Console.WriteLine($"-i - Folder does not have a .git folder.");
+                    Console.WriteLine($"I couldn't find a .git folder. Please use -h for more options.");
                     return 0;
                 }
 

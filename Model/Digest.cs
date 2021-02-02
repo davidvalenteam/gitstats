@@ -9,7 +9,7 @@ namespace GitStats.Model
         public IReadOnlyCollection<DigestAuthor> Authors { get; private set; }
         public long TotalLinesAdded { get; private set; }
         public long TotalLinesDeleted { get; private set; }
-        public long TotalCommits { get; private set; }
+        public long TotalCommitsWithOneParent { get; private set; }
         public string GitRepositoryPath { get; private set; }
         public DateTime DigestDateUTC { get; private set; }
 
@@ -21,7 +21,7 @@ namespace GitStats.Model
             {
                 DigestDateUTC = DateTime.UtcNow,
                 GitRepositoryPath = gitRepositoryPath,
-                TotalCommits = authors.Sum(s => s.TotalCommits),
+                TotalCommitsWithOneParent = authors.Sum(s => s.TotalCommitsWithOneParent),
                 TotalLinesAdded = authors.Sum(s => s.LinesAdded),
                 TotalLinesDeleted = authors.Sum(s => s.LinesDeleted)
             };
@@ -29,7 +29,7 @@ namespace GitStats.Model
             digest.Authors = authors.Select(a => new DigestAuthor(a,
                     percentageLinesAdded: GetPercentage(a.LinesAdded, digest.TotalLinesAdded),
                     percentageLinesDeleted: GetPercentage(a.LinesDeleted, digest.TotalLinesDeleted),
-                    percentageTotalCommits: GetPercentage(a.TotalCommits, digest.TotalCommits))).ToList();
+                    percentageTotalCommitsWithOneParent: GetPercentage(a.TotalCommitsWithOneParent, digest.TotalCommitsWithOneParent))).ToList();
 
             return digest;
         }

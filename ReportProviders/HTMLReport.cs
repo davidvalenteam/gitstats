@@ -26,7 +26,7 @@ namespace GitStats.ReportProviders
                                 <section>
                                     <p><strong>Git repository:</strong> {digest.GitRepositoryPath}</p>
                                     <p><strong>Total Authors:</strong> {digest.Authors.Count}</p>
-                                    <p><strong>Total Commits:</strong> {digest.TotalCommits}</p>
+                                    <p><strong>Total Commits With One Parent:</strong> {digest.TotalCommitsWithOneParent}</p>
                                     <p><strong>Total Lines Added:</strong> {digest.TotalLinesAdded}</p>
                                     <p><strong>Total Lines Deleted:</strong> {digest.TotalLinesDeleted}</p>
                                 </section>
@@ -35,7 +35,7 @@ namespace GitStats.ReportProviders
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Total Commits</th>
+                                            <th>Total Commits With One Parent</th>
                                             <th>Total Lines Added</th>
                                             <th>Total Lines Deleted</th>
                                         </tr>";
@@ -45,7 +45,7 @@ namespace GitStats.ReportProviders
                                   html += @$"<tr>
                                                  <td>{author.Author.Name}</td>
                                                  <td>{author.Author.Email}</td>
-                                                 <td>{author.Author.TotalCommits} (<u>{author.PercentageTotalCommits}%</u>)</td>
+                                                 <td>{author.Author.TotalCommitsWithOneParent} (<u>{author.PercentageTotalCommitsWithOneParent}%</u>)</td>
                                                  <td>{author.Author.LinesAdded} (<u>{author.PercentageLinesAdded}%</u>)</td>
                                                  <td>{author.Author.LinesDeleted} (<u>{author.PercentageLinesDeleted}%</u>)</td>
                                             </tr>";

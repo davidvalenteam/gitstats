@@ -36,7 +36,7 @@ namespace GitStats
                             authors[commit.Author.Name].LinesDeleted += ptc.LinesDeleted;
                         }
 
-                        authors[commit.Author.Name].TotalCommits++;
+                        authors[commit.Author.Name].TotalCommitsWithOneParent++;
                     }
 
                     commitsSha.Add(commit.Sha);

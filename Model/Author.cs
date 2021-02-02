@@ -6,7 +6,7 @@
         public string Email { get; private set; }
         public long LinesAdded { get; set; }
         public long LinesDeleted { get; set; }
-        public long TotalCommits { get; set; }
+        public long TotalCommitsWithOneParent { get; set; }
 
         public Author(string name, string email)
         {
