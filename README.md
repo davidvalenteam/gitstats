@@ -34,11 +34,11 @@ The results were truncated and they were originally stored in separated files.
         "Email": "immol@microsoft.com",
         "LinesAdded": 1247,
         "LinesDeleted": 137,
-        "TotalCommits": 29
+        "TotalCommitsWithOneParent": 29
       },
       "PercentageLinesAdded": 0,
       "PercentageLinesDeleted": 0,
-      "PercentageTotalCommits": 1,
+      "PercentageTotalCommitsWithOneParent": 1,
       "PonderatedPercentage": 0
     },
     {
@@ -47,11 +47,11 @@ The results were truncated and they were originally stored in separated files.
         "Email": "davidsb@microsoft.com",
         "LinesAdded": 1,
         "LinesDeleted": 0,
-        "TotalCommits": 1
+        "TotalCommitsWithOneParent": 1
       },
       "PercentageLinesAdded": 0,
       "PercentageLinesDeleted": 0,
-      "PercentageTotalCommits": 0,
+      "PercentageTotalCommitsWithOneParent": 0,
       "PonderatedPercentage": 0
     },
     {
@@ -60,17 +60,17 @@ The results were truncated and they were originally stored in separated files.
         "Email": "rlander@microsoft.com",
         "LinesAdded": 4269,
         "LinesDeleted": 1266,
-        "TotalCommits": 119
+        "TotalCommitsWithOneParent": 119
       },
       "PercentageLinesAdded": 1,
       "PercentageLinesDeleted": 1,
-      "PercentageTotalCommits": 6,
+      "PercentageTotalCommitsWithOneParent": 6,
       "PonderatedPercentage": 3
     }
     ],
   "TotalLinesAdded": 421642,
   "TotalLinesDeleted": 170029,
-  "TotalCommits": 2162,
+  "TotalCommitsWithOneParent": 2162,
   "GitRepositoryPath": "C:\\Users\\User01\\Documents\\core",
   "DigestDateUTC": "2021-01-30T15:17:15.7259911Z"
 }
